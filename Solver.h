@@ -20,5 +20,4 @@ public:
     std::list<std::pair<int, int>> getAlg();
 };
 
-
 #endif

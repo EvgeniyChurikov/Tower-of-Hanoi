@@ -22,5 +22,4 @@ public:
     void run();
 };
 
-
 #endif

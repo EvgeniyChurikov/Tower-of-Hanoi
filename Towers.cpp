@@ -43,4 +43,3 @@ bool Towers::isComplete() {
 int Towers::getDisksAmount() {
     return disksAmount;
 }
-
