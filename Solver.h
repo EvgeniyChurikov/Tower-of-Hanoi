@@ -3,6 +3,7 @@
 
 #include "Towers.h"
 #include <list>
+#include <iostream>
 
 class Solver {
 private:
@@ -15,6 +16,7 @@ public:
     void generate();
     void reset();
     void next();
+    void print(std::ostream &out);
 };
 
 

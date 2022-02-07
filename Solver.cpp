@@ -30,3 +30,12 @@ void Solver::next() {
     towers->move(iter->first, iter->second);
     ++iter;
 }
+
+void Solver::print(std::ostream &out) {
+    out << "Algorithm for tower of hanoi with " << towers->getDisksAmount() << "disks" << std::endl;
+    out << "START" << std::endl;
+    for (std::pair<int, int> step : alg) {
+        out << step.first + 1 << "->" << step.second + 1 << std::endl;
+    }
+    out << "FINISH" << std::endl;
+}

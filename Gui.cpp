@@ -89,6 +89,7 @@ void Gui::run() {
                     case sf::Keyboard::Enter:
                         towers->reset();
                         solver->generate();
+                        solver->print(std::cout);
                         select = -1;
                         isSolving = true;
                         clock.restart();
