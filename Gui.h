@@ -10,6 +10,7 @@
  * backspace — reset tower
  * +,- — change disks amount
  * enter — auto solve
+ * Up/Down — change auto solving speed
  */
 
 class Gui {
