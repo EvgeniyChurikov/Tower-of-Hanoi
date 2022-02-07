@@ -39,3 +39,7 @@ void Solver::print(std::ostream &out) {
     }
     out << "FINISH" << std::endl;
 }
+
+std::list<std::pair<int, int>> Solver::getAlg() {
+    return alg;
+}

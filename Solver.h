@@ -17,6 +17,7 @@ public:
     void reset();
     void next();
     void print(std::ostream &out);
+    std::list<std::pair<int, int>> getAlg();
 };
 
 
