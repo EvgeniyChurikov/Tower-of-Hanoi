@@ -17,9 +17,10 @@ Gui::Gui(Towers *towers_, Solver *solver_) {
 }
 
 void Gui::run() {
-    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Tower of Hanoi", sf::Style::Titlebar | sf::Style::Close);
+    sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Tower of Hanoi",
+                            sf::Style::Titlebar | sf::Style::Close);
 
-    sf::RectangleShape shape(sf::Vector2f(100.0f,100.0f));
+    sf::RectangleShape shape(sf::Vector2f(100.0f, 100.0f));
 
     sf::Font font;
     if (!font.loadFromFile("calibri.ttf"))
@@ -35,7 +36,7 @@ void Gui::run() {
     congrats.setCharacterSize(32);
     congrats.setFillColor(sf::Color::Cyan);
     congrats.setString("Puzzle solved!");
-    congrats.setPosition((WINDOW_WIDTH - congrats.getLocalBounds().width)/2.0f, 0);
+    congrats.setPosition((WINDOW_WIDTH - congrats.getLocalBounds().width) / 2.0f, 0);
 
     autosolve.setFont(font);
     autosolve.setCharacterSize(24);
@@ -48,11 +49,9 @@ void Gui::run() {
     bool isSolving = false;
     sf::Clock clock;
 
-    while (window.isOpen())
-    {
+    while (window.isOpen()) {
         sf::Event event;
-        while (window.pollEvent(event))
-        {
+        while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
             if (event.type == sf::Event::KeyPressed) {
@@ -116,7 +115,8 @@ void Gui::run() {
         shape.setSize(sf::Vector2f(ROD_WIDTH, ROD_HEIGHT));
         for (int i = 0; i < 3; ++i) {
             shape.setFillColor(i == select ? sf::Color::Blue : sf::Color::Yellow);
-            shape.setPosition((i + 1)*WINDOW_WIDTH/4.0f - ROD_WIDTH/2.0f, WINDOW_HEIGHT - ROD_HEIGHT - ROD_ALTITUDE);
+            shape.setPosition((i + 1) * WINDOW_WIDTH / 4.0f - ROD_WIDTH / 2.0f,
+                              WINDOW_HEIGHT - ROD_HEIGHT - ROD_ALTITUDE);
             window.draw(shape);
         }
 
@@ -124,9 +124,12 @@ void Gui::run() {
         shape.setFillColor(sf::Color::Magenta);
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < rods[i].size(); ++j) {
-                const float disk_width = SMALLEST_DISK_DIAMETER + (BIGGEST_DISK_DIAMETER - SMALLEST_DISK_DIAMETER)*(rods[i][j] - 1)/(MAX_DISK_AMOUNT - 1);
+                const float disk_width = SMALLEST_DISK_DIAMETER +
+                                         (BIGGEST_DISK_DIAMETER - SMALLEST_DISK_DIAMETER) * (rods[i][j] - 1) /
+                                         (MAX_DISK_AMOUNT - 1);
                 shape.setSize(sf::Vector2f(disk_width, DISK_HEIGHT));
-                shape.setPosition((i + 1)*WINDOW_WIDTH/4.0f - disk_width/2.0f, WINDOW_HEIGHT - ROD_ALTITUDE - (j + 1)*DISK_HEIGHT);
+                shape.setPosition((i + 1) * WINDOW_WIDTH / 4.0f - disk_width / 2.0f,
+                                  WINDOW_HEIGHT - ROD_ALTITUDE - (j + 1) * DISK_HEIGHT);
                 window.draw(shape);
             }
         }
