@@ -70,6 +70,20 @@ void Gui::run() {
                             }
                         }
                         break;
+                    case sf::Keyboard::Numpad1:
+                    case sf::Keyboard::Numpad2:
+                    case sf::Keyboard::Numpad3:
+                    case sf::Keyboard::Numpad4:
+                    case sf::Keyboard::Numpad5:
+                    case sf::Keyboard::Numpad6:
+                    case sf::Keyboard::Numpad7:
+                    case sf::Keyboard::Numpad8:
+                    case sf::Keyboard::Numpad9:
+                        if (!towers->isComplete() && !isSolving) {
+                            num = event.key.code - sf::Keyboard::Numpad1;
+                            towers->move(num / 3, num % 3);
+                        }
+                        break;
                     case sf::Keyboard::BackSpace:
                         towers->reset();
                         select = -1;
