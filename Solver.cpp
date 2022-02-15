@@ -14,8 +14,7 @@ void Solver::generate() {
 void Solver::generateRecursive(int from, int to, int n) {
     if (n == 1) {
         alg.push_back(std::make_pair(from, to));
-    }
-    else {
+    } else {
         generateRecursive(from, 3 - from - to, n - 1);
         alg.push_back(std::make_pair(from, to));
         generateRecursive(3 - from - to, to, n - 1);
@@ -34,7 +33,7 @@ void Solver::next() {
 void Solver::print(std::ostream &out) {
     out << "Algorithm for tower of hanoi with " << towers->getDisksAmount() << " disks" << std::endl;
     out << "START" << std::endl;
-    for (std::pair<int, int> step : alg) {
+    for (std::pair<int, int> step: alg) {
         out << step.first + 1 << "->" << step.second + 1 << std::endl;
     }
     out << "FINISH" << std::endl;

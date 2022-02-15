@@ -19,6 +19,7 @@ private:
     Solver *solver;
 public:
     Gui(Towers *towers, Solver *solver);
+
     void run();
 };
 

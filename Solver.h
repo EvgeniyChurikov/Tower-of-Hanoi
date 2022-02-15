@@ -10,13 +10,20 @@ private:
     Towers *towers;
     std::list<std::pair<int, int>> alg;
     std::list<std::pair<int, int>>::const_iterator iter;
+
     void generateRecursive(int from, int to, int n);
+
 public:
     Solver(Towers *towers);
+
     void generate();
+
     void reset();
+
     void next();
+
     void print(std::ostream &out);
+
     std::list<std::pair<int, int>> getAlg();
 };
 

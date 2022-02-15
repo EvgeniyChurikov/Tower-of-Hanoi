@@ -18,7 +18,7 @@ void Towers::reset() {
 }
 
 void Towers::reset(int n) {
-    for (std::vector<int>& rod : rods) {
+    for (std::vector<int> &rod: rods) {
         rod.clear();
     }
     for (int i = 0; i < n; ++i) {
